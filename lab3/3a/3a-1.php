@@ -55,10 +55,6 @@
     $filePath = "categories/{$category}/{$title}-{$email}.txt";
     file_put_contents($filePath, $description);
 
-
-    if(false === file_put_contents($filePath, $description)){
-        throw new Exception(message:"Error!");
-    }
     chmod($filePath, 0777);
 
     $categories = scandir("categories");
